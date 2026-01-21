@@ -1,7 +1,7 @@
 # Product Tour Generator
 
 A lightweight, bookmarklet-based tool for creating product tours and on-page guides.
-
+</br>Demo: <a href="https://asafco83.github.io/TourGen/examples/demo.html">Click Here</a>
 ## Features
 
 -   **Zero Integration**: Runs on top of any website via bookmarklet.
@@ -10,7 +10,7 @@ A lightweight, bookmarklet-based tool for creating product tours and on-page gui
 -   **Instant Preview**: Test your tour immediately in the browser.
 -   **Download & Share**: Export tours as JSON/JS files.
 
-## Installation
+## Installation (local server)
 
 1.  Start the local server:
     ```bash
@@ -20,9 +20,14 @@ A lightweight, bookmarklet-based tool for creating product tours and on-page gui
 2.  Open [http://localhost:3000](http://localhost:3000).
 3.  Drag the **"Tour Editor"** button to your bookmarks bar.
 
+## Installation (from web)
+
+1.  Go to the GitHub page <a href="https://asafco83.github.io/TourGen/bookmarklet/install.html">Here</a> and follow the usage instructions.
+
 ## Usage
 
 1.  Navigate to any website you want to create a tour for.
 2.  Click the **"Tour Editor"** bookmarklet.
 3.  Use the editor to add steps, select elements, and customize interactions.
 4.  Click **Export** to save your tour.
+
