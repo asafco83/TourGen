@@ -1235,6 +1235,8 @@ window.ProductTourGeneratorTours["${currentTour.id}"] = JSON.parse('${escaped}')
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-size: 13px;
+        direction: ltr; /* Ensure LTR layout regardless of page direction */
+        text-align: left;
         color: #e5e7eb;
         display: flex;
         flex-direction: column;
