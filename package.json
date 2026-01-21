@@ -1,0 +1,17 @@
+{
+  "name": "product-tour-generator",
+  "version": "1.0.0",
+  "description": "Cross-browser extension and runtime for authoring and playing product tours",
+  "private": true,
+  "scripts": {
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "product-tour",
+    "onboarding",
+    "walkthrough",
+    "browser-extension"
+  ],
+  "author": "",
+  "license": "MIT"
+}

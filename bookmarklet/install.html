@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Tour Generator - Install Bookmarklet</title>
+    <style>
+        :root {
+            --bg: #0f0f1a;
+            --card-bg: #1a1a2e;
+            --border: #2a2a4a;
+            --text: #e5e7eb;
+            --text-muted: #9ca3af;
+            --primary: #4f46e5;
+            --primary-light: #7c3aed;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .bookmarklet-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: #2a2a4a;
+            border-radius: 12px;
+            margin: 16px 0;
+        }
+
+        .bookmarklet-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: grab;
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .bookmarklet-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(79, 70, 229, 0.5);
+        }
+
+        .bookmarklet-link:active {
+            cursor: grabbing;
+        }
+
+        .bookmarklet-link svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .instructions {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .hint {
+            background: rgba(79, 70, 229, 0.1);
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        .hint strong,
+        .instructions a {
+            color: var(--primary-light);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .feature {
+            background: #2a2a4a;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .feature span {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎯 <span class="gradient-text">Product Tour Generator</span></h1>
+        <p class="subtitle">Create interactive product tours on any website</p>
+
+        <div class="card">
+            <h2><span class="num">1</span> Install the Bookmarklet</h2>
+            <p class="instructions">Drag this button to your bookmarks bar:</p>
+
+            <div class="bookmarklet-container">
+                <a class="bookmarklet-link"
+                    href="javascript:(function(){var s=document.createElement('script');s.src='BOOKMARKLET_URL';document.body.appendChild(s);})();"
+                    onclick="event.preventDefault();alert('Drag this to your bookmarks bar!');">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    Tour Editor
+                </a>
+            </div>
+
+            <div class="hint">
+                <strong>💡 Tip:</strong> If you don't see your bookmarks bar, press <strong>Ctrl+Shift+B</strong>
+                (Windows) or <strong>Cmd+Shift+B</strong> (Mac) to show it.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">2</span> Create Your Tour</h2>
+            <ol class="instructions">
+                <li>Navigate to the website where you want to create a tour</li>
+                <li>Click the <strong>Tour Editor</strong> bookmarklet in your bookmarks bar</li>
+                <li>Click <strong>"+ Add Step"</strong> to create steps</li>
+                <li>Click <strong>"🎯 Select Target Element"</strong> and click any element on the page</li>
+                <li>Fill in the title and description for each step</li>
+                <li>Click <strong>"💾 Export JS"</strong> to download your tour</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">3</span> Embed on Your Site</h2>
+            <p class="instructions">Add the <a href="product-tour-runtime.js">runtime</a> and your exported tour to your
+                website:</p>
+            <pre
+                style="background: #2a2a4a; padding: 16px; border-radius: 8px; overflow-x: auto; margin-top: 12px; font-size: 13px; color: #a5b4fc;">
+&lt;!-- Include runtime --&gt;
+&lt;script src="product-tour-runtime.js"&gt;&lt;/script&gt;
+
+&lt;!-- Include your tour --&gt;
+&lt;script src="my-tour.js"&gt;&lt;/script&gt;
+
+&lt;!-- Start the tour --&gt;
+&lt;script&gt;
+  ProductTourGenerator.start('your-tour-id');
+&lt;/script&gt;</pre>
+        </div>
+
+        <div class="card">
+            <h2>✨ Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <strong>🎯 Smart Selectors</strong>
+                    <span>Auto-generates robust CSS selectors</span>
+                </div>
+                <div class="feature">
+                    <strong>📦 Export/Import</strong>
+                    <span>Save and load tours as JS files</span>
+                </div>
+                <div class="feature">
+                    <strong>🔒 Isolated UI</strong>
+                    <span>Shadow DOM prevents style conflicts</span>
+                </div>
+                <div class="feature">
+                    <strong>⚡ No Install</strong>
+                    <span>Works instantly via bookmarklet</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Product Tour Generator &copy; 2026
+        </footer>
+    </div>
+
+    <script>
+        // Dynamically resolve the editor URL based on the current page location.
+        // This ensures it works even if installed in a subdirectory (e.g. your-site.com/tools/tour-gen/)
+        const editorUrl = new URL('tour-editor.js', window.location.href).href;
+
+        const bookmarkletCode = `javascript:(function(){if(window.__PTG_EDITOR_LOADED__){window.__PTG_TOGGLE_EDITOR__();return;}var s=document.createElement('script');s.src='${editorUrl}';s.onload=function(){console.log('[PTG] Loaded');};s.onerror=function(){alert('Failed to load Tour Editor. Make sure the server is running and the file exists at ${editorUrl}');};document.body.appendChild(s);})();`;
+
+        document.querySelector('.bookmarklet-link').href = bookmarkletCode;
+    </script>
+</body>
+
+</html>
