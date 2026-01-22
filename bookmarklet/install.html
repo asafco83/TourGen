@@ -279,7 +279,7 @@
         // This ensures it works even if installed in a subdirectory (e.g. your-site.com/tools/tour-gen/)
         const editorUrl = new URL('tour-editor.js', window.location.href).href;
 
-        const bookmarkletCode = `javascript:(function(){if(window.__PTG_EDITOR_LOADED__){window.__PTG_TOGGLE_EDITOR__();return;}var s=document.createElement('script');s.src='${editorUrl}';s.onload=function(){console.log('[PTG] Loaded');};s.onerror=function(){alert('Failed to load Tour Editor. Make sure the server is running and the file exists at ${editorUrl}');};document.body.appendChild(s);})();`;
+        const bookmarkletCode = `javascript:(function(){if(window.__PTG_EDITOR_LOADED__){window.__PTG_TOGGLE_EDITOR__();return;}var s=document.createElement('script');s.src='${editorUrl}';s.onload=function(){console.log('[PTG] Loaded');};s.onerror=function(){alert('Failed to load Tour Editor.\\n\\nPossible causes:\\n1. This website blocks external scripts (Content Security Policy).\\n2. The server is not running or the file is missing.\\n\\nCheck the browser console for details.');};document.body.appendChild(s);})();`;
 
         document.querySelector('.bookmarklet-link').href = bookmarkletCode;
     </script>
